@@ -149,6 +149,8 @@ class ascii_video:
         except: pass
         os.makedirs(output, exist_ok=True)
 
+        output += '/'
+
         video = VideoFileClip(input_path)
         if video.audio is not None:
             video.audio.write_audiofile(output+'audio.mp3')
@@ -231,6 +233,7 @@ class ascii_video:
 
     def __init__(self):
         self.frames = []
+
 
 
 
