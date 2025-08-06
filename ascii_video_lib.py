@@ -147,10 +147,8 @@ class ascii_video:
 
         _ = os.system('cls')
 
-        try:
-            shutil.rmtree(output)
-        except:
-            pass
+        try: shutil.rmtree(output)
+        except: pass
         os.makedirs(output, exist_ok=True)
 
         video = VideoFileClip(input_path)
@@ -161,14 +159,13 @@ class ascii_video:
             silent.export(output+'audio.mp3', format="mp3")
 
         output_path = 'output.mp4'
-        font_path = r"C:\Windows\Fonts\consola.ttf"
+        font_path = r"C:\Windows\Fonts\consola.ttf" #you can change this to dejavu-fonts if using linux or mac
         font_size = 10
         
         if format in ['txt']:
-            try:
-                os.remove(output+'video.txt')
-                file = open(output+'video.txt', 'w', encoding='utf-8')
-            except Exception: file = open(output+'video.txt', 'w', encoding='utf-8')
+            try: os.remove(output+'video.txt')
+            except: pass
+            file = open(output+'video.txt', 'w', encoding='utf-8')
 
         cap = cv2.VideoCapture(input_path)
         fps = cap.get(cv2.CAP_PROP_FPS)
@@ -235,5 +232,6 @@ class ascii_video:
 
     def __init__(self):
         self.frames = []
+
 
 
