@@ -12,3 +12,5 @@ Other functions from the class are just auxiliary to the functions above.
 Installation:
 1. Install ```python```
 2. Install all librararies: ```pip install pillow opencv-python numpy pytest-shutil moviepy pydub```. If you run into problem, make sure to check compatibility with your python version and either update python or download other library version (especially moviepy and pydub).
+3. Download ```core``` folder with ```ascii_video_lib.py``` and place it so you can import it.
+4. Enjoy!
