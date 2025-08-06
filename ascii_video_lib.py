@@ -3,8 +3,6 @@ import cv2
 from sys import stdout
 import time
 import numpy as np
-from bs4 import BeautifulSoup
-import re
 import shutil
 import os
 from moviepy import VideoFileClip
@@ -233,6 +231,7 @@ class ascii_video:
 
     def __init__(self):
         self.frames = []
+
 
 
 
