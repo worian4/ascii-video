@@ -215,15 +215,16 @@ class ascii_video:
         f_fps = open(output+'fps.txt', 'w')
         f_fps.write(str(fps))
 
-    def read_video(self, video, audio=None, fps=30):
+    def read_video(self, path):
         
         _ = os.system('cls')
 
-        frames = open(video, "r", encoding="utf-8").read().split('qwerty')
+        frames = open(path+'/video.txt', 'r', encoding='utf-8').read().split('qwerty')
 
-        if audio != None:
-            audio_thread = threading.Thread(target=self.play_audio, args=(audio,))
-            audio_thread.start()
+        audio_thread = threading.Thread(target=self.play_audio, args=path+'/audio.mp3',)
+        audio_thread.start()
+
+        fps = float(open(path+'fps.txt', 'r').read())
 
         self.display_ascii_video_smooth(frames, fps)
         audio_thread.join()
@@ -232,6 +233,7 @@ class ascii_video:
 
     def __init__(self):
         self.frames = []
+
 
 
 
